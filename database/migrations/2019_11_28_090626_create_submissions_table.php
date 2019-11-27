@@ -14,14 +14,18 @@ class CreateSubmissionsTable extends Migration
     public function up()
     {
         Schema::create('submissions', function (Blueprint $table) {
-            $table->integer('id');
+            $table->engine = 'InnoDB';
+            $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('center_name')->nullable();
-            $table->string('email');
-            $table->integer('country')->references('id')->on('countries');
-            $table->integer('title')->references('id')->on('person_titles');
-            $table->integer('language')->references('id')->on('languages');
+            $table->string('email')->unique();
+            $table->integer('country_id')->unsigned();
+            $table->integer('title_id')->unsigned();
+            $table->integer('language_id')->unsigned();
+            $table->foreign('country_id')->references('id')->on('countries');
+            $table->foreign('language_id')->references('id')->on('languages');
+            $table->foreign('title_id')->references('id')->on('person_titles');
             $table->timestamps();
         });
     }

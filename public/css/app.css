@@ -11352,3 +11352,8 @@ a.text-dark:focus {
   }
 }
 
+.registration-error-div {
+  padding: 0;
+  margin: 0;
+}
+

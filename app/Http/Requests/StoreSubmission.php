@@ -13,7 +13,7 @@ class StoreSubmission extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,8 +24,12 @@ class StoreSubmission extends FormRequest
     public function rules()
     {
         return [
-            'title' =>  'required',
-            'email' =>  'required|email'
+            'title_id'         =>  'required',
+            'email'         =>  'required|unique:submissions|email',
+            'first_name'    =>  'required',
+            'last_name'     =>  'required',
+            'country_id'       =>  'required|int',
+            'language_id'      =>  'required'
         ];
     }
 }

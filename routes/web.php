@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/registration-form', 'RegistrationController@showForm')->name('registration-form');
 Route::post('/registration-form', 'RegistrationController@store');
+Route::get('/registration-success', 'RegistrationController@success')->name('success');
 Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('home');

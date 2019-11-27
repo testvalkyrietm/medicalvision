@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSubmission;
+use App\Name;
 use Illuminate\Http\Request;
 use App\Language;
 use App\PersonTitle;
 use App\Country;
+use Illuminate\Support\Facades\DB;
+use Validator;
+use App\Submission;
+use Mail;
+use App\Mail\entrySubmittedCustomer;
 
 class RegistrationController extends Controller
 {
@@ -42,19 +49,44 @@ class RegistrationController extends Controller
         return view('registration_form.registration', $pushToBlade);
     }
 
-    function store(Request $request) {
+    function store(StoreSubmission $request) {
+        $submission = Submission::create($request->all());
 
-        dd($request);
+        if ($submission) {
 
-        $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'email' => 'required|email',
-            'first_name'=>  'required',
+            $mail_data = [
+                'to'    =>  $request->email,
+                'toname'    =>  $request->first_name.($request->center_name != '' ? ' '.$request->center_name : '').' '.$request->last_name,
+                'mail_template' =>  'mails.customerMail',
+                'formdata'  =>  $submission,
+                'subject'  =>  'Submission Received'
+            ];
 
-        ]);
+            $to = [
+                [
+                    'email' => $request->email,
+                    'name' => $request->first_name.($request->center_name != '' ? ' '.$request->center_name : '').' '.$request->last_name,
+                ]
+            ];
 
-        return Submission::create([
+            Mail::to($request->email)->send(new entrySubmittedCustomer($submission));
+            MailController::html_email($mail_data);
 
-        ]);
+            $mail_data['to'] = 'admin@admin.com';
+            $mail_data['toname'] = 'Admin';
+            $mail_data['subject'] = 'New Submission Made';
+            $mail_data['mail_template'] = 'mails.adminMail';
+
+            MailController::html_email($mail_data);
+
+            return redirect()->route('success');
+        }
+
+        return Redirect::back()->withErrors(['msg', "There's something wrong with your submission"]);
     }
+
+    function success() {
+        return view('registration_form.success');
+    }
+
 }
