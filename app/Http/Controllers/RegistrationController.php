@@ -26,7 +26,7 @@ class RegistrationController extends Controller
         }
 
         foreach ($languages as $language) {
-            $structured_languages[$language->id] = $language->language;
+            $structured_languages[$language->id] = strtoupper($language->language);
         }
 
         foreach ($countries as $country) {
@@ -44,5 +44,17 @@ class RegistrationController extends Controller
 
     function store(Request $request) {
 
+        dd($request);
+
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'email' => 'required|email',
+            'first_name'=>  'required',
+
+        ]);
+
+        return Submission::create([
+
+        ]);
     }
 }

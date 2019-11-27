@@ -25,6 +25,7 @@ class StoreSubmission extends FormRequest
     {
         return [
             'title' =>  'required',
+            'email' =>  'required|email'
         ];
     }
 }

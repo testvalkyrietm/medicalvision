@@ -19,4 +19,4 @@ Route::get('/registration-form', 'RegistrationController@showForm')->name('regis
 Route::post('/registration-form', 'RegistrationController@store');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index')->name('home');
