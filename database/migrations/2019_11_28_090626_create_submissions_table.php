@@ -18,7 +18,7 @@ class CreateSubmissionsTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('center_name')->nullable();
+            $table->string('company_name');
             $table->string('email')->unique();
             $table->integer('country_id')->unsigned();
             $table->integer('title_id')->unsigned();

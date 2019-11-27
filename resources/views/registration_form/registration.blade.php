@@ -34,8 +34,8 @@
             </div>
             <div class="col-md-6" >
                 <div class="form-group">
-                    {{ Form::label('center_name', 'Center Name') }}
-                    {{ Form::text('center_name', '', ['class'=>'form-control']) }}
+                    {{ Form::label('company_name', 'Company Name') }}
+                    {{ Form::text('company_name', '', ['class'=>'form-control']) }}
                 </div>
             </div>
             <div class="col-md-6" >

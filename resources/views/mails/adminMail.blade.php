@@ -14,12 +14,12 @@ A new submission has been made!
         <td>{{ $submission->first_name }}</td>
     </tr>
     <tr>
-        <td>Center Name:</td>
-        <td>{{ $submission->center_name }}</td>
-    </tr>
-    <tr>
         <td>Last Name:</td>
         <td>{{ $submission->last_name }}</td>
+    </tr>
+    <tr>
+        <td>Company:</td>
+        <td>{{ $submission->company_name }}</td>
     </tr>
     <tr>
         <td>Email:</td>

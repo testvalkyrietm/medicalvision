@@ -28,6 +28,7 @@ class StoreSubmission extends FormRequest
             'email'         =>  'required|unique:submissions|email',
             'first_name'    =>  'required',
             'last_name'     =>  'required',
+            'company_name'    =>  'required',
             'country_id'       =>  'required|int',
             'language_id'      =>  'required'
         ];

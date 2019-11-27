@@ -65,7 +65,7 @@ class RegistrationController extends Controller
 
             $to = [
                 [
-                    'email' => 'admin@admin.com',
+                    'email' => 'admin@admin.com', // To be received form environment variable
                     'name' => 'Admin',
                 ]
             ];

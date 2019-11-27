@@ -7,7 +7,7 @@ use Eloquent;
 
 class Submission extends Model
 {
-    protected $fillable = ['title_id', 'language_id', 'email', 'country_id', 'first_name', 'last_name', 'center_name'];
+    protected $fillable = ['title_id', 'language_id', 'email', 'country_id', 'first_name', 'last_name', 'company_name'];
 
 
     function country() {

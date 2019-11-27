@@ -24,10 +24,10 @@
                                 First Name
                             </th>
                             <th>
-                                Center Name
+                                Last Name
                             </th>
                             <th>
-                                Last Name
+                                Company
                             </th>
                             <th>
                                 Email
@@ -53,10 +53,10 @@
                                     {{ $row->first_name }}
                                 </td>
                                 <td>
-                                    {{ $row->center_name }}
+                                    {{ $row->last_name }}
                                 </td>
                                 <td>
-                                    {{ $row->last_name }}
+                                    {{ $row->company_name }}
                                 </td>
                                 <td>
                                     {{ $row->email }}
