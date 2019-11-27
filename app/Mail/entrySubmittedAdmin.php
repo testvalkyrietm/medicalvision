@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class entrySubmittedCustomer extends Mailable
+class entrySubmittedAdmin extends Mailable
 {
     use Queueable, SerializesModels;
     public $submission;
@@ -30,6 +30,6 @@ class entrySubmittedCustomer extends Mailable
      */
     public function build()
     {
-        return $this->subject('Submission Received')->view('mails.customerMail');
+        return $this->subject('New Submission Received')->view('mails.adminMail');
     }
 }

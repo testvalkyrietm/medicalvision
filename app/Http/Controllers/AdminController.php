@@ -25,11 +25,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $rows = DB::table('submissions')->select('*','submissions.id as submission_id')
-                    ->join('countries', 'submissions.country', '=', 'countries.id')
-                    ->join('person_titles', 'submissions.title', '=', 'person_titles.id')
-                    ->join('languages', 'submissions.language', '=', 'languages.id')->get();
-
+        $rows = Submission::all();
         return view('admin.home', ['rows'=>$rows]);
     }
 }

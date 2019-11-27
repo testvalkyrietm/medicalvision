@@ -27,10 +27,10 @@ You have been successfully registered!
     </tr>
     <tr>
         <td>Language:</td>
-        <td>{{ $submission->language }}</td>
+        <td>{{ $submission->language->language }}</td>
     </tr>
     <tr>
         <td>Country:</td>
-        <td>{{ $submission->country }}</td>
+        <td>{{ $submission->country->country_name }}</td>
     </tr>
 </table>

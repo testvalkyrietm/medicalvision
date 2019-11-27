@@ -44,10 +44,10 @@
                         @foreach($rows as $row)
                             <tr>
                                 <td>
-                                    {{ $row->submission_id }}
+                                    {{ $row->id }}
                                 </td>
                                 <td>
-                                    {{ $row->title }}
+                                    {{ $row->personTitle->person_title }}
                                 </td>
                                 <td>
                                     {{ $row->first_name }}
@@ -62,10 +62,10 @@
                                     {{ $row->email }}
                                 </td>
                                 <td>
-                                    {{ $row->language }}
+                                    {{ $row->language->language }}
                                 </td>
                                 <td>
-                                    {{ $row->country }}
+                                    {{ $row->country->country_name }}
                                 </td>
                             </tr>
                         @endforeach

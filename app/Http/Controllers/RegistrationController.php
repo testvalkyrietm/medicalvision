@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Validator;
 use App\Submission;
 use Mail;
+use App\Mail\entrySubmittedAdmin;
 use App\Mail\entrySubmittedCustomer;
 
 class RegistrationController extends Controller
@@ -54,30 +55,22 @@ class RegistrationController extends Controller
 
         if ($submission) {
 
-            $mail_data = [
-                'to'    =>  $request->email,
-                'toname'    =>  $request->first_name.($request->center_name != '' ? ' '.$request->center_name : '').' '.$request->last_name,
-                'mail_template' =>  'mails.customerMail',
-                'formdata'  =>  $submission,
-                'subject'  =>  'Submission Received'
-            ];
-
             $to = [
                 [
                     'email' => $request->email,
                     'name' => $request->first_name.($request->center_name != '' ? ' '.$request->center_name : '').' '.$request->last_name,
                 ]
             ];
+            Mail::to($to)->send(new entrySubmittedCustomer($submission));
 
-            Mail::to($request->email)->send(new entrySubmittedCustomer($submission));
-            MailController::html_email($mail_data);
+            $to = [
+                [
+                    'email' => 'admin@admin.com',
+                    'name' => 'Admin',
+                ]
+            ];
+            Mail::to($to)->send(new entrySubmittedAdmin($submission));
 
-            $mail_data['to'] = 'admin@admin.com';
-            $mail_data['toname'] = 'Admin';
-            $mail_data['subject'] = 'New Submission Made';
-            $mail_data['mail_template'] = 'mails.adminMail';
-
-            MailController::html_email($mail_data);
 
             return redirect()->route('success');
         }

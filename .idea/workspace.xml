@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2df8ef07-208d-43ba-83a0-d0e77b1b7826" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/mails/adminMail.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mails/customerMail.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/registration_form/success.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/entrySubmittedAdmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Country.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreSubmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreSubmission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Language.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PersonTitle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PersonTitle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Submission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Submission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/SubmissionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SubmissionFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_27_090626_create_submissions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_28_090626_create_submissions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/entrySubmittedCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/entrySubmittedCustomer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/registration_form/registration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/registration_form/registration.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mails/customerMail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mails/customerMail.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,18 +122,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/mails" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Mail" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/mails" />
-      <recent name="$PROJECT_DIR$/resources/views/registration_form" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/views/auth/admin" />
+      <recent name="$PROJECT_DIR$/resources/views/registration_form" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Mail" />
+      <recent name="$PROJECT_DIR$/resources/views/mails" />
       <recent name="$PROJECT_DIR$/resources/views/registration_form" />
     </key>
   </component>
@@ -179,6 +168,7 @@
       <updated>1574843088184</updated>
       <workItem from="1574843090900" duration="4679000" />
       <workItem from="1574847782591" duration="23700000" />
+      <workItem from="1574873989437" duration="369000" />
     </task>
     <servers />
   </component>
@@ -190,7 +180,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
